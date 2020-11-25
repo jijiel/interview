@@ -1,0 +1,33 @@
+﻿1.HelloWorld 를 출력하는 프로그램의 과정을 설명하시오.
+
+class HelloWorld{
+	public static void main(String[] args){
+		System.out.println("Hello World")
+- helloworld.java
+- javac helloworld.java (컴파일)
+> 컴파일하면 .class가 생김 
+- java helloworld(.class 생략가능) (실행) 자바 언어를 가지고 실행시킴
+
+2.아래의 명령어를 설명하시오(뭐하는건가).
+
+-javac 
+ 컴파일러: 특정 프로그래밍 언어로 쓰여있는 문서를 다른 프로그래밍 언어로 옮기는 것을 함
+-java 
+ 프로그램 언어
+
+3.컴파일이란 무엇인가요?
+
+- 프로그래밍 언어를 기계어로 번역해 주는 것 
+
+4.java 언어를 창시한 사람은?
+
+- 제임스 고슬링
+
+5.JDK란 무엇이며, 어디서 다운로드 받으며, OS별로 버전이 있는 까닭은?
+- JDK (Java Development Kit): 자바 개발 키트/Java로 소프트웨어를 개발할 수 있도록 여러 기능들을 제공하는 패키지(키트)라고 한다.
+- oracle 홈페이지
+- 각각 다른 운영체제에서도 자바를 사용할 수 있도록 하려고
+
+6.JVM 무엇의 약자이며,이란 무엇인가?
+- JVM(Java Virtual Machine) 자바 가상 머신 
+시스템 메모리를 관리하면서 자바 기반 애플리케이션을 위해 이식 가능한 실행 환경을 제공
