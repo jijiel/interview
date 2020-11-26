@@ -1,0 +1,195 @@
+﻿1.결합방향과 우선순위에 대하여 설명하시오.
+
+- 연산기호가 있으면 우선순위대로 적용하고 결합방향은 우선순위가 같을 때 왼쪽에서 오른쪽으로 한다. 
+
+
+2.1 초과 100 미만인가? 를 코딩을 하게 되면?
+
+- int num = 4;
+  boolean result = ((num > 1) && (num < 100));
+  System.out.print(result);
+ 
+
+3.2의 배수 또는 3의 배수? 를 코딩을 하게 되면?
+
+- int num = 4;
+  boolean result = ((num % 2) == 0) || (num % 3) == 0);
+  System.out.print(result);
+
+
+4. && 와  || 설명하시오.
+
+- &&: A && B A와B가 모두 참이면 true, AND 연산
+- ||: A || B 한 개 라도 참이면 true, OR 연산
+
+
+5. 아래의 프린트 결과를 예측해 보고, 코딩후 결과를 확인하시오
+class SCE {
+    public static void main(String[] args) {
+        int num1 = 0; 
+        int num2 = 0;
+        boolean result;
+        
+        result = ((num1 += 10) < 0) && ((num2 += 10) > 0);
+        System.out.println("result = " + result);
+        System.out.println("num1 = " + num1);
+        System.out.println("num2 = " + num2 + '\n');
+		
+        result = ((num1 += 10) > 0) || ((num2 += 10) > 0);
+        System.out.println("result = " + result);
+        System.out.println("num1 = " + num1);
+        System.out.println("num2 = " + num2);
+    }
+}
+
+> 예상답
+result = false
+num1 = 10
+num2 = 0
+
+result = true
+num1 = 20
+num2 = 0
+
+> 실제답
+result = false
+num1 = 10
+num2 = 0
+
+result = true
+num1 = 20
+num2 = 0
+
+
+6.아래가 에러가 나는 이유를 설명하고, 수정하시오
+short num1
+short num = -num 
+
+- short num = (short)(-num) 형변환 하지않으면 오류 발생,-num은 연산을 하고 있기때문에(-1*num)으로 이건 정수인 int형이라서 short로 형변환 해야함
+- short num1 은 뭔지 모르겠음
+
+
+7.전위증가 연산자와 후위증가 연산자의 차이는?
+
+- ++가 앞에 쓰이면 전위증가 연산자, 뒤에쓰이면 후위증가 연산자
+- 전위증가 연산자는 즉시 변수증가가 실행되지만 후위증가 연산자는 하나의 실행단위가 끝난 후 일어난다.
+
+
+8.아래의 비트연산자 4가지를 설명하시오.
+-&,^,|,~
+
+- &: 비트 단위로 AND 연산
+- ^: 비트 단위로 XOR 연산> 같으면 0 다르면 1
+- |: 비트 단위로 OR연산
+- ~: 비트 단위 반대로
+
+
+9.아래의 쉬프트 연산자에 대하여 설명하시오.
+<< , >>
+
+- 쉬프트는 이동의 뜻 << 왼쪽으로 >>오른쪽으로 이동, 왼쪽으로의 쉬프트는 값의 2배증가, 오른쪽으로의 쉬프트는 값을 2로 나눈 결과
+
+
+10.전위연산자와 후위연산자에 대하여 설명하시오.
+
+앞에 연산자를 쓴것/ 뒤에 연산자를 쓴것
+
+
+11.아래의 출력값을 예측하시오.
+class AssignSteResult {
+    public static void main(String[] args) {
+        int num1 = 10, num2 = 20, num3 = 30;
+        num1 = num2 = num3;
+
+        /*
+          = 연산자는 결합 방향이 오른쪽에서 왼쪽으로 진행된다. 
+          따라서 위의 문장은 다음과 같다. 
+          num1 = (num2 = num3);        
+        */
+        
+        System.out.println(num1);	
+        System.out.println(num2);
+        System.out.println(num3);
+    }
+}
+
+>예측답
+모름
+>실제답
+30
+30
+30
+
+
+12.아래의 출력값을 예측하시오.
+class SCE {
+    public static void main(String[] args) {
+        int num1 = 0; 
+        int num2 = 0;
+        boolean result;
+
+        num1 += 10;
+        num2 += 10;        
+        result = (num1 < 0) && (num2 > 0);
+
+        System.out.println("result = " + result);
+        System.out.println("num1 = " + num1);
+        System.out.println("num2 = " + num2 + '\n');
+		
+        num1 += 10;
+        num2 += 10;        
+        result = (num1 > 0) || (num2 > 0);
+
+        System.out.println("result = " + result);
+        System.out.println("num1 = " + num1);
+        System.out.println("num2 = " + num2);
+    }
+}
+
+> 예상답 
+result = false
+num1 = 10
+num2 = 0
+
+result = true
+num1 = 20
+num2 = 0
+
+> 실제답
+result = false
+num1 = 10
+num2 = 10
+
+result = true
+num1 = 20
+num2 = 20
+
+
+
+13.아래의 출력값을 예측하시오.
+class AddNum {
+    public static void main(String[] args) {
+        int result = 3 + 6;
+        System.out.println("3 + 6 = " + result);
+        
+        result += 9;
+        System.out.println("3 + 6 + 9 = " + result);
+        
+        result += 12;
+        System.out.println("3 + 6 + 9 + 12 = " + result);
+    }
+}
+
+> 예상답
+3 + 6 = 9
+
+3 + 6 + 9 = 18
+
+3 + 6 + 9 + 12 = 30
+> 실제답
+3 + 6 = 9
+3 + 6 + 9 = 18
+3 + 6 + 9 + 12 = 30
+
+
+
