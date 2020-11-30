@@ -1,0 +1,236 @@
+﻿1.반복문 3가지의 무한루프 만드는 방법은?
+
+ - for(;;)
+ - while(true)
+ -do{
+  }while(true)
+
+
+2.구구단 출력을 하시오.
+
+	public static void main(String[] args) {
+		//구구단 출력을 하시오.
+		
+		for(int i = 1; i < 10; i++) {
+			for(int j = 1; j < 10; j++) {
+				System.out.println(i+"x"+j+ "=" + (i*j));
+			}
+			System.out.println();
+		}
+	}
+
+
+3.짝수단만 찍으시오.
+
+	public static void main(String[] args) {
+		//짝수단만 찍으시오.
+		
+		for(int i = 1; i < 10; i++) {
+			
+			for(int j = 1; j < 10; j++) {
+				
+				if(i % 2 == 0) {
+					
+					System.out.println(i+"x"+j+ "=" + (i*j));
+				}				
+			}
+			System.out.println();
+		}
+	}
+
+
+4.3의 배수인 단만 출력하시오.
+
+	public static void main(String[] args) {
+		//3의 배수인 단만 출력하시오.
+		
+		for(int i = 1; i < 10; i++) {
+			
+			for(int j = 1; j < 10; j++) {
+				
+				if(i % 3 == 0) {
+					
+					System.out.println(i+"x"+j+ "=" + (i*j));
+				}				
+			}
+			System.out.println();
+		}
+	}
+
+
+5.아래의 Star를 찍으시오.
+
+*****
+*****
+*****
+*****
+*****
+
+	public static void main(String[] args) {
+		
+		for(int i = 1; i < 6; i++) {
+			for(int j = 1; j < 6; j++) {									
+				System.out.print("*");							
+			}
+			System.out.println();
+		}
+	}
+	
+	
+*
+**
+***
+****
+*****
+
+	public static void main(String[] args) {
+		
+		for(int i = 1; i < 6; i++) {
+			for(int j = 1; j <= i; j++) {									
+				System.out.print("*");							
+			}
+			System.out.println();
+		}
+	}
+		
+*****
+****
+***
+**
+*
+
+	public static void main(String[] args) {
+		for(int i = 1; i <= 5; i++) {
+			for(int j = 5; j >= i  ; j--) {									
+				System.out.print("*");							
+			}
+			System.out.println();
+		}
+	}
+
+    *
+   **
+  ***
+ ****
+*****	
+		for(int i=5; i >= 1 ; i--){
+			
+			for(int j=1; j<=i-1; j++) {
+				System.out.print(" ");
+			}
+			for(int j=5; j>=i; j--) {
+				System.out.print("*");
+			}
+			System.out.println();
+		}
+
+	
+
+   *
+  ***
+ *****
+******* 
+
+6.함수는 어떻게 알아 볼수 있는가?
+
+ - 중괄호 (   ) >> 함수는 이것을 보고 함수인 것을 알 수 있다.
+
+
+7.함수는 어떻게 만드는가?
+
+ - 변수 선언을 하여 메소드를 정의한다. 
+
+8.함수는 어떻게 써먹는가?
+
+ - 호출하여 사용한다.
+
+9.아래의 함수를 만드시오.
+함수이름: starPrint
+매개변수: type 1개
+기능: 매개변수에 3를 전달하면 3층 석탑, 5를 전달하면 5층석탑
+예) 3전달시 3층석탑
+*
+**
+***
+5전달시 5층석탑
+*
+**
+***
+****
+*****
+
+	public static void main(String[] args) {
+	
+		starPrint(5);
+		
+	
+	}
+	public static void starPrint(int num) {
+		for(int i = 1; i <= num; i++) {
+			for(int j = 1; j <= i; j++) {									
+				System.out.print("*");							
+			}
+			System.out.println();
+		}	
+	}
+
+ 
+10.아래의 함수를 만들고,해당함수를 호출하여 확인하시오. 
+함수이름: getGrade()
+매개변수: double type 1개
+리턴: 수 우 미 양 가 중 하나의 char 타입
+
+	public static void main(String[] args) {
+
+		char result;
+		result = getGrade(70.5);
+		System.out.println(result);			
+	}
+	public static char getGrade(double avg) {
+		char returngetGrade;
+		if(avg > 90) {
+			returngetGrade = '수';			
+		}else if(avg > 80) {
+			returngetGrade = '우';
+		}else if(avg > 70) {
+			returngetGrade = '미';
+		}else if(avg > 60) {
+			returngetGrade = '양';
+		}else {
+			returngetGrade = '가';
+		}
+		return returngetGrade;
+	}		
+}
+
+11.매개변수 하나를 받아 원의 넓이를 리턴하는 함수를 작성하시오.
+
+	public static void main(String[] args) {
+		
+		double result;
+		result = circlewidth(5.1);
+		System.out.println(result);			
+	}
+	public static double circlewidth(double num) {
+		double pi = 3.14;
+		double circlewidth = num*num*pi;
+		return circlewidth;
+	}		
+}
+
+
+
+12.매개변수 두개를 받아, 사각형의 넓이를 리턴하는 함수를 작성하시오.
+
+	public static void main(String[] args) {
+
+		double result;
+		result = square(5.0,4.3);
+		System.out.println(result);			
+	}
+	public static double square(double num1,double num2) {
+		
+		double square = num1*num2;
+		return square;
+	}	
+
