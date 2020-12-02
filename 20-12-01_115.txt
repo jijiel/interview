@@ -1,0 +1,279 @@
+﻿1.아래가 의도하지 않은 결과를 나타내는 이유를 설명하시오.
+
+
+char ch = '가';
+System.out.println(ch + '\n')
+
+'가' 의 유니코드 값과 '\n'의 유니코드 값이 int형식으로 연산되어 int 값이 출력된다.
+의도를 표현하기 위해서는 '\n'을 "\n" 로 바꿔줘야한다.
+
+2.변수의 scope 는?
+
+ - 변수의 영역을 뜻한다.
+ - { 이 사이 }
+
+
+3.지역변수?
+
+ - 지역변수는 함수 안에서 있는 변수로 같은 영역 {  } 내에 있는 변수들, 같은 영역 내에서 동일 이름의 변수 선언 불가하다.
+ - 영역을 벗어나면 지역변수는 소멸한다. 
+
+
+4.펙토리얼을 구하는 재귀 함수를 만드시오.
+
+-f(n) = nxf(n-1)  n>=2
+ f(n) = 1         n =1
+
+- public static int factorial(int n){
+   if(n == 1)
+	return 1;
+   else
+	return n*factorial(n-1);
+  }
+
+
+5.클래스의 구성요소는 무엇인가?
+
+ - 데이터와 기능 
+
+
+
+6.원의 넓이는 구하는 프로그램을 아래와 같이 작성하시오.
+
+
+-원클래스를 만들것
+
+public class Circle {
+	
+	double radius;
+	
+	public double getRadius() {
+		return radius;
+	}
+	public void setRadius(double radius) {
+		this.radius = radius;
+	}
+	
+	public double getArea() {
+		return radius*radius*Math.PI;
+	}
+	
+
+}
+
+
+
+-메인 메소드를 가진 다른 클래스에서 원 객체를 생성할것
+
+public class CircleMain {
+	public static void main(String[] args) {
+		Circle circle = new Circle();
+		
+		circle.setRadius(10);
+		
+		double area = circle.getArea();
+		
+		System.out.println("원의 넓이는 : " + area);
+	}
+
+}
+
+
+7.객체란 무엇인가?
+
+ - 클래스'라는 틀을 통해 만들어낸 실체를 말한다.
+   객체를 생성한다는 것은 해당 클래스의 .class 파일을 메모리에 올린다는 것을 의미한다.
+   함수를 사용 할 수 있게 하는 것
+    Circle circle = new Circle();
+    Circle -> 클래스명 
+    circle -> 생성하려는 객체 이름
+    new -> 객체 생성 키워드
+    Circle(); -> Circle(); 함수 > 주소를 가리킴
+
+
+
+8. 아래의 클래스에 대하여, 메모리 그림을 그리시오.
+Rectangle rec = new Rectangle();
+ 
+public class Rectangle {
+	int height;
+	int width;
+	
+	public int getHeight() {
+		return height;
+	}
+	
+	public void setHeight(int height) {
+		this.height = height;
+	}
+	
+	public int getWidth() {
+		return width;
+	}
+	
+	public void setWidth(int width) {
+		this.width = width;
+	}
+	
+	public int getArea() {
+		return width * height;
+	}
+	
+}
+
+
+- Rectangle 
+
+
+9.클래스와 객체의 차이는 무엇인가?
+ 
+ - 
+
+
+
+10.아래의 프로그램을 작성하시오.
+
+-1 부터 num 까지 합을 구하는 class 를 작성하도록 하시오.
+
+public class Sum {
+	int num;
+	int sum = 0;
+	
+	public int getNum() {
+		return num;
+	}
+	
+	public void setNum(int num) {
+		this.num = num;
+	}
+	
+	public void sum() {
+		for(int i=1; i <=num; i++) {
+			sum = sum +i;
+		}
+		System.out.println("1부터 " + num + "까지의 합은: " + sum);
+	}
+}
+
+
+public class SumMain {
+	public static void main(String[] args) {
+		
+		Sum sum = new Sum();
+		
+		int num;
+		num= 100;
+		
+		sum.setNum(num);
+		sum.sum();
+		
+	}
+}
+
+
+
+11.아래의 클래스를 작성하시오.
+
+StraPrint strPrint = new StarPrint();
+
+strPrint.printTriangle(3); 
+System.out.println();
+strPrint.printReverseTriangle(3); 
+===============================
+*
+**
+***
+
+***
+**
+*
+
+public class StarPrint {
+	int num;
+
+	public void printTriangle(int num) {
+		for(int i=1; i <= num; i++) {
+			for(int j=1; j<=i; j++) {
+				System.out.print("*");
+			}
+			System.out.println();
+		}		
+	}
+	
+public class StarPrintMain {
+	public static void main(String[] args){
+		
+		StarPrint strprint = new StarPrint();
+		
+		strprint.printTriangle(3);
+		
+		System.out.println();
+		
+		strprint.printReverseTriangle(3);
+		
+		
+	}
+
+}
+
+
+public class StarPrintMain {
+	public static void main(String[] args){
+		
+		StarPrint strprint = new StarPrint();
+		
+		strprint.printTriangle(3);
+		
+		System.out.println();
+		
+		strprint.printReverseTriangle(3);
+		
+		
+	}
+
+}
+
+
+
+
+12.아래의 프로그래밍을 작성하시오.
+
+Gugudan gugudan = new Gugudan();
+gugudan.printGugu(10);  //1단부터 10단까지 출력
+gugudan.printGugu(20);  //1단부터 20단까지 출력
+
+public class GugudanMain {
+	
+	public static void main(String[] args) {
+		
+		Gugudan gugudan = new Gugudan();
+		gugudan.printGugu(10);  //1단부터 10단까지 출력
+		gugudan.printGugu(20);  //1단부터 20단까지 출력
+		
+	}	
+}
+
+public class Gugudan {
+	
+	public void printGugu(int num) {
+		
+		for(int i = 1; i <= num; i++) {
+			for(int j = 1; j <= num; j++) {
+				System.out.println(i+"x"+j+"="+(i*j));
+			}
+			System.out.println();
+		}
+		
+	}	
+}
+
+
+
+
+13. 아래의 BankAccount 객체에 대하여 그림을 그리시오.
+   BankAccount ref1 = new BankAccount();
+   BankAccount ref2 = ref1;
+
+
+
+ 
