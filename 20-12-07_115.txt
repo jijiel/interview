@@ -1,0 +1,256 @@
+﻿﻿
+1.인스턴스 함수안에 스태틱 변수와 함수가 올수 있는 이유는?
+
+
+- 인스턴스 변수에서는 스태틱 변수도 올 수 있고, 스태틱 함수도 사용 가능하다.
+
+> 스태틱으로 미리 생성되어 있기때문에 호출해서 사용 가능하다.
+
+
+- 클래스 메소드(스태틱 함수) 안에 인스턴스 라면(변수,함수)가 올 수 없는 이유
+
+> static이 먼저 메모리에 올라가고 인스턴스 변수는 객체 생성할때 메모리 생성을 하기 때문에
+
+>> 즉, 메모리 생성 시기가 다르기 때문이다. 그래서 스태틱 함수에는 스태틱 변수밖에 올 수 없다. (지역변수는 사용 가능)
+
+
+
+2.메소드 오버로딩이란?
+
+
+- 호출된 메소드를 찾을때 참조하게 되는 두가지 정보
+
+1. 메소드의 이름(함수이름)
+
+2. 메소드의 매개변수 정보
+
+> 따라서 이 둘 중 하나의 형태가 다른 메소드를 정의하는 것이 가능하다.
+
+
+image.png
+대표사진 삭제
+사진 설명을 입력하세요.
+
+> 함수 이름이 전부 같은데 컴파일이 되는 이유는 뭔가 다르기 때문인데, 무엇이 다른걸까? (C언어는 같은 함수이름 쓸수없다)
+
+파라미터(매개변수) 갯수가 다르므로 성립!
+
+데이터 타입(매개변수의 형)이 다르기 때문에 성립!
+
+(반환형은 메소드 오버로딩의 조건이 아님)
+
+>> 같은 함수이름으로 파라미터(매개변수)의 타입과 갯수를 달리해서 쓸 수 있는 것
+
+>>> 이것을 '메소드 오버로딩' 이라고 한다.
+
+
+
+3.메소드 오버로딩을 적용한 대표적인 함수는?
+
+
+println - 어떤 형이던지 다 출력 가능 >> 함수 오버로딩이 되기 때문에
+
+
+
+4.this 함수에 대하여 설명하시오.
+
+
+this를 이용하여 다른 생성자를 호출 할 수 있다. (오버로딩 된 다른 생성자를 호출 하여 중복된 코드를 줄이는 효과를 낼 수 있다.)
+
+
+
+5.this란 무엇인가?
+
+
+this.인스턴스변수 = 인스턴스변수; >> 어느 위치에서 건 인스턴스 변수를 의미한다.
+
+
+
+6.스트링 객체를 생성하는 2가지 방법은?
+
+
+String str1 = new String("Simple String");
+
+String str2 = "The Best String";
+
+
+> 두 개 다 객체 생성(인스턴스 생성) 되고 , 참조형 변수로 참조 값이 반환된다.
+
+
+아래의 결과를 예측하고,이유를 설명하시오.
+
+String str1 = "Simple String";
+
+String str2 = "Simple String";
+
+
+String str3 = new String("Simple String");
+
+String str4 = new String("Simple String");
+
+
+if(str1 == str2)
+
+System.out.println("str1과 str2는 동일 인스턴스 참조");
+
+else
+
+System.out.println("str1과 str2는 다른 인스턴스 참조");
+
+
+if(str3 == str4)
+
+System.out.println("str3과 str4는 동일 인스턴스 참조");
+
+else
+
+System.out.println("str3과 str4는 다른 인스턴스 참조");
+
+
+> 답:
+
+str1과 str2는 동일 인스턴스 참조
+
+str1과 str2는 다른 인스턴스 참조
+
+
+> 이유:
+
+str1 과 str2의 경우 값을 다이렉트로 넣는 방식인데, 이럴 경우 리터럴(상수) 처럼 보기 때문에 메모리에 한가지를 올려 놓고 동일 주소로 가져가서 사용함. 해당 이유로 동일하게 봄
+
+str3과 str4의 경우 각각 객체를 생성하여 각각 다른 주소로 메모리를 생성하기 때문에 다른 값으로 인식한다.
+
+
+7.immutable 에 대하여 설명하시오.
+
+
+immutable 인스턴스는 값을 변경하지 못하는 인스턴스를 말한다.
+
+String 의 인스턴스는 immutable 인스턴스로 생성되는 객체의 수가 많다면 계속 값을 복사해서 새로 생성해야 하기 때문에 많은 인스턴스의 수 생성을 최소화 해야한다.
+
+
+
+8. 사용자로부터 받은 문자열(영문으로)에서 자음과 모음 개수를 계산하는 프로그램을 작성하라.
+
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		
+		System.out.println("문자를 입력하세요");
+		String str;
+		int cons = 0;
+		int vowel = 0;
+		
+		str = scan.next();
+		
+		for(int i = 0; i < str.length(); i++) {
+			if(str.charAt(i) == 'a'
+					||str.charAt(i) == 'e'
+					||str.charAt(i) == 'i'
+					||str.charAt(i) == 'o'
+					||str.charAt(i) == 'u') {
+				vowel++;
+				
+		}else {
+			cons++;
+		}
+		
+		scan.close();
+		
+		}
+		System.out.println("자음: "+vowel+"개");
+		System.out.println("모음: "+cons+"개");
+
+	}
+
+
+
+9. 사용자로부터 키를 입력받아서 표준 체중을 계산한 후에 사용자의 체중과 비교하여 저체중인지, 표준인지, 과체중인지를 판단하는 프로그램을 작성하라. 표준 체중 계산식은 다음을 사용하라.
+
+표준체중 = ( 키 - 100 ) * 0.9
+
+public class WeightMain {
+
+	public static void main(String[] args) {
+				
+		Scanner s = new Scanner(System.in);
+		
+		System.out.println("몸무게와 키를 입력하세요.");
+		
+		Weight myWeight = new Weight(s.nextDouble(),s.nextDouble());
+		myWeight.showPrintln();
+		
+
+	}
+
+}
+
+public class Weight {	
+	
+		private double weight;
+		private double height;
+		private double standard;
+		
+		Weight(double weight,double height){
+			this.weight = weight;
+			this.height = height;
+		}
+		
+				
+		public void showPrintln() {
+			 standard = (height - 100 )*0.9;
+			 
+		if(weight>standard) {
+			System.out.println("표준 체중은 "+standard+"로 과체중 입니다.");
+		}else if(weight == standard) {
+			System.out.println("표준체중 입니다.");
+		}else {
+			System.out.println("표준 체중은 "+standard+"로 저체중 입니다.");
+		}
+		
+
+	}
+
+}
+
+public class WeightMain2 {
+
+	public static void main(String[] args) {
+				
+		Scanner s = new Scanner(System.in);
+		
+		System.out.println("몸무게와 키를 입력하세요.");
+		
+		double weight;
+		double height;
+		weight = s.nextDouble();
+		height = s.nextDouble();
+		
+		double standard = (height - 100 )*0.9;
+		
+		if(weight>standard) {
+			System.out.println("표준 체중은 "+standard+"로 과체중 입니다.");
+		}else if(weight == standard) {
+			System.out.println("표준체중 입니다.");
+		}else {
+			System.out.println("표준 체중은 "+standard+"로 저체중 입니다.");
+		}
+		
+
+	}
+
+}
+
+
+10. 2와 100 사이에 있는 모든 소수(prime number)를 찾는 프로그램을 작성하라.
+ 주어진 정수 k를 2부터 k-1까지의 숫자로 나누어서 나머지가 0인 것이 하나라도 있으면 소수가 아니다.
+
+
+11.사용자에게 받은 문자열을 역순으로 화면에 출력하는 프로그램을 작성하시오.
+
+입력:abcde
+
+출력:edcba
+
+
+﻿
+
