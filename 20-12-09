@@ -418,5 +418,5 @@ int[] unit = {50000, 10000, 1000, 500, 100, 50, 10, 1}; // 환산할 돈의 종�
 14.아래를 메모리 구조로 표현하시오.
 
 int[][] arr = new int[3][4]
-![201209](https://postfiles.pstatic.net/MjAyMDEyMDlfMjY3/MDAxNjA3NTE0NjAwNzUy.MFBcIBXNn3gZQi8IHj9efEGubphuekXN_JBQRjC45hYg.atu-X36mjgOBkfMq7I26y5hYDT47TKiCnpURywp2ooMg.PNG.o_oax/image.png?type=w966)
+
 
