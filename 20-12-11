@@ -69,8 +69,7 @@ B ba = new A();
 MobilePhone(부모) SmartPhone(자식)
 SmartPhone s = new MobilePhone();
 
-![상속메모리](https://user-images.githubusercontent.com/74961220/102008979-c1fe4080-3d77-11eb-9059-2694c77ca4bf.png)
-![상속 기능관점](https://user-images.githubusercontent.com/74961220/102008982-c62a5e00-3d77-11eb-9459-ee6e00dae4d4.png)
+
 
 ### 4.메소드 오버라이딩 이란?
 
