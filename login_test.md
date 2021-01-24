@@ -252,7 +252,7 @@ public class ApiExamMemberProfile {
 
 ![](https://postfiles.pstatic.net/MjAyMTAxMjRfMjYy/MDAxNjExNDk3NjYyNzE0.XJObdQsfaW3Fjqins2EzRVhzHHG-dnj4VIt7aF6k46kg.MVsfRYrqB-et7bFuyHY1cmE0NHwfsSiCwWFZmloiSVsg.PNG.o_oax/image.png?type=w966)
 
-> callback 값을 받으면 토큰생성, 3600으로 되어있어 1시간마다 새로운 토큰 생성해 접근가능
+> callback 값을 받으면 토큰생성, 3600으로 되어있어 1시간마다 새로운 토큰 생성해야 접근가능
 
 ![](https://postfiles.pstatic.net/MjAyMTAxMjRfODEg/MDAxNjExNDk3NTk3MzUy.fjXYcg7GhmCe4I9WKvaPXhT237J7_-W540rq6whC6Dog.xZhwbp5HHUi9VsXoNNXkg7ATWHyPeNC1F3SL8kxBzvkg.PNG.o_oax/image.png?type=w966)
 
